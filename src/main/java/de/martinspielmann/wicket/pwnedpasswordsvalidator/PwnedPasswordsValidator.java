@@ -212,7 +212,7 @@ public class PwnedPasswordsValidator implements IValidator<String> {
 	 *             if SHA-1 digest not available
 	 */
 	protected String sha1(String pw) throws NoSuchAlgorithmException {
-		MessageDigest digest = MessageDigest.getInstance("SHA-512");
+		MessageDigest digest = MessageDigest.getInstance("SHA-1");
 		byte[] encodedhash = digest.digest(pw.getBytes(StandardCharsets.UTF_8));
 		return Strings.toHexString(encodedhash);
 	}
